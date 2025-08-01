@@ -7,8 +7,13 @@ import com.rendyrobbani.latte.core.domain.common.Pegawai;
 public interface DataUser extends Pegawai, Authentication, Data<String> {
 
 	@Override
-	default String getId() {
-		return this.getNIP();
+	default String getNIP() {
+		return this.getId();
+	}
+
+	@Override
+	default String getUsername() {
+		return this.getId();
 	}
 
 }
