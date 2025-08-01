@@ -21,8 +21,6 @@ public interface Personal {
 		return this.getNickName(uppercase, true);
 	}
 
-	String getFullName();
-
 	default String getFullName(boolean uppercase, boolean nullable) {
 		if (this.getNickName() == null && nullable) return null;
 		if (this.getNickName() == null) return "";
@@ -35,6 +33,10 @@ public interface Personal {
 
 	default String getFullName(boolean uppercase) {
 		return this.getFullName(uppercase, true);
+	}
+
+	default String getFullName() {
+		return this.getFullName(false, true);
 	}
 
 }

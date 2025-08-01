@@ -6,6 +6,8 @@ import com.rendyrobbani.latte.core.domain.common.Pegawai;
 
 public interface DataUser extends Pegawai, Authentication, Data<String> {
 
+	String REGEX_ID = REGEX;
+
 	@Override
 	default String getNIP() {
 		return this.getId();
