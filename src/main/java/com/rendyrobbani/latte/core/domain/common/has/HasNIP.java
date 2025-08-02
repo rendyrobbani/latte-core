@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 public interface HasNIP {
 
-	String REGEX = "^(199[0-9]|20[0-2][0-9])(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])(199[0-9]|20[0-2][0-9])(0[1-9]|1[0-2]|21)[12](00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$";
+	String REGEX_NIP = "^(199[0-9]|20[0-2][0-9])(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])(199[0-9]|20[0-2][0-9])(0[1-9]|1[0-2]|21)[12](00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$";
 	DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
 	int[] BIRTH_DATE_MAP = {0, 8};
 	int[] START_DATE_MAP = {8, 14};
@@ -16,7 +16,7 @@ public interface HasNIP {
 
 	default boolean isValid(String value) {
 		if (value == null) return false;
-		return value.matches(REGEX);
+		return value.matches(REGEX_NIP);
 	}
 
 	default boolean isNotValid(String value) {

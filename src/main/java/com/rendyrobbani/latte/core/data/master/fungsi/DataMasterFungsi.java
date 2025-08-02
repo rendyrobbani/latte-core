@@ -6,8 +6,8 @@ import com.rendyrobbani.latte.core.domain.master.fungsi.Fungsi;
 public interface DataMasterFungsi extends Fungsi, Data<String> {
 
 	@Override
-	default String getId() {
-		return this.getCode();
+	default String getCode() {
+		return this.getId();
 	}
 
 }

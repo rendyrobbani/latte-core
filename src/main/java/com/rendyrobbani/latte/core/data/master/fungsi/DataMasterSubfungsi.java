@@ -7,8 +7,8 @@ import com.rendyrobbani.latte.core.domain.master.fungsi.Subfungsi;
 public interface DataMasterSubfungsi extends Subfungsi, HasDataMasterFungsi, Data<String> {
 
 	@Override
-	default String getId() {
-		return this.getCode();
+	default String getCode() {
+		return this.getId();
 	}
 
 }
