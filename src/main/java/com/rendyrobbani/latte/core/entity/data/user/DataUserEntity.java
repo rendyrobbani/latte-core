@@ -6,6 +6,7 @@ import com.rendyrobbani.latte.core.converter.gender.GenderConverter;
 import com.rendyrobbani.latte.core.converter.pangkat.PangkatASNConverter;
 import com.rendyrobbani.latte.core.domain.data.user.DataUser;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +17,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "data_user")
 public class DataUserEntity implements DataUser, Serializable {
