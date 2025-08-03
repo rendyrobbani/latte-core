@@ -7,13 +7,16 @@ import com.rendyrobbani.latte.core.converter.pangkat.PangkatASNConverter;
 import com.rendyrobbani.latte.core.entity.data.LatteDataReadableEntity;
 import com.rendyrobbani.latte.core.entity.data.user.DataUserEntity;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
 @MappedSuperclass
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class DataUserLogEntity extends LatteDataReadableEntity {
 
 	@Id
