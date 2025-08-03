@@ -1,11 +1,10 @@
-package com.rendyrobbani.latte.core.entity.data.user.log;
+package com.rendyrobbani.latte.core.entity.data.user;
 
 import com.rendyrobbani.espresso.common.data.gender.Gender;
 import com.rendyrobbani.espresso.common.data.pangkat.PangkatASN;
 import com.rendyrobbani.latte.core.converter.gender.GenderConverter;
 import com.rendyrobbani.latte.core.converter.pangkat.PangkatASNConverter;
-import com.rendyrobbani.latte.core.entity.data.LatteDataReadableEntity;
-import com.rendyrobbani.latte.core.entity.data.user.DataUserEntity;
+import com.rendyrobbani.latte.core.entity.data.AbstractDataReadableEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -17,7 +16,7 @@ import java.time.LocalDateTime;
 @Getter
 @MappedSuperclass
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class DataUserLogEntity extends LatteDataReadableEntity {
+public abstract class AbstractDataUserLogEntity extends AbstractDataReadableEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -79,7 +78,7 @@ public abstract class DataUserLogEntity extends LatteDataReadableEntity {
 	@JoinColumn(name = "logged_by", referencedColumnName = "id", nullable = true)
 	protected DataUserEntity loggedBy;
 
-	public DataUserLogEntity(DataUserEntity subject, DataUserEntity loggedBy) {
+	public AbstractDataUserLogEntity(DataUserEntity subject, DataUserEntity loggedBy) {
 		super(subject.getCreatedAt(), subject.getCreatedBy(), subject.getUpdatedAt(), subject.getUpdatedBy(), subject.isDeleted(), subject.getDeletedAt(), subject.getDeletedBy());
 		this.subject = subject;
 		this.loggedAt = LocalDateTime.now();

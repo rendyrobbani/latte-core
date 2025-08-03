@@ -2,12 +2,15 @@ package com.rendyrobbani.latte.core.entity.data;
 
 import com.rendyrobbani.latte.core.entity.data.user.DataUserEntity;
 import jakarta.persistence.MappedSuperclass;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @MappedSuperclass
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @SuppressWarnings("unchecked")
-public abstract class LatteDataWritableEntity<Entity> extends LatteDataReadableEntity {
+public abstract class AbstractDataWritableEntity<Entity> extends AbstractDataReadableEntity {
 
 	public Entity update(DataUserEntity updatedBy) {
 		if (updatedBy == null) throw new IllegalArgumentException("updatedBy cannot be null");

@@ -52,7 +52,7 @@
 		<dependency>
 			<groupId>com.github.rendyrobbani</groupId>
 			<artifactId>espresso</artifactId>
-			<version>e651e99</version>
+			<version>68cbedf</version>
 		</dependency>
 	</dependencies>
 

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @MappedSuperclass
-public abstract class LatteDataLoggableEntity<Subject> extends LatteDataReadableEntity {
+public abstract class AbstractDataLoggableEntity<Subject> extends AbstractDataReadableEntity {
 
 	public abstract Subject getSubject();
 
@@ -22,13 +22,13 @@ public abstract class LatteDataLoggableEntity<Subject> extends LatteDataReadable
 	@JoinColumn(name = "logged_by", referencedColumnName = "id", nullable = true)
 	protected DataUserEntity loggedBy;
 
-	public LatteDataLoggableEntity(Subject subject, DataUserEntity loggedBy) {
+	public AbstractDataLoggableEntity(Subject subject, DataUserEntity loggedBy) {
 		if (loggedBy == null) throw new IllegalArgumentException("loggedBy cannot be null");
 		this.loggedAt = LocalDateTime.now();
 		this.loggedBy = loggedBy;
 
-		if (!(subject instanceof LatteDataReadableEntity)) throw new IllegalArgumentException("subject must be an instance of LatteDataReadableEntity");
-		var s = (LatteDataReadableEntity) getSubject();
+		if (!(subject instanceof AbstractDataReadableEntity)) throw new IllegalArgumentException("subject must be an instance of LatteDataReadableEntity");
+		var s = (AbstractDataReadableEntity) getSubject();
 		this.createdAt = s.getCreatedAt();
 		this.createdBy = s.getCreatedBy();
 		this.updatedAt = s.getUpdatedAt();

@@ -1,6 +1,6 @@
 package com.rendyrobbani.latte.core.entity.data;
 
-import com.rendyrobbani.latte.core.entity.LatteEntity;
+import com.rendyrobbani.latte.core.entity.AbstractEntity;
 import com.rendyrobbani.latte.core.entity.data.user.DataUserEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public abstract class LatteDataReadableEntity extends LatteEntity {
+public abstract class AbstractDataReadableEntity extends AbstractEntity {
 
 	@Column(name = "created_at", nullable = true)
 	protected LocalDateTime createdAt;
@@ -42,7 +42,7 @@ public abstract class LatteDataReadableEntity extends LatteEntity {
 	@JoinColumn(name = "deleted_by", referencedColumnName = "id", nullable = true)
 	protected DataUserEntity deletedBy;
 
-	public LatteDataReadableEntity(LatteDataReadableEntity entity) {
+	public AbstractDataReadableEntity(AbstractDataReadableEntity entity) {
 		this.createdAt = entity.getCreatedAt();
 		this.createdBy = entity.getCreatedBy();
 		this.updatedAt = entity.getUpdatedAt();

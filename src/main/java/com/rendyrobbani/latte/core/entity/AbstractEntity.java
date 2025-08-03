@@ -6,7 +6,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @MappedSuperclass
-public abstract class LatteEntity implements Serializable {
+public abstract class AbstractEntity implements Serializable {
 
 	@Serial
 	private static final long serialVersionUID = 1L;

@@ -8,6 +8,7 @@ import com.rendyrobbani.espresso.schema.fact.column.common.*;
 import com.rendyrobbani.espresso.schema.fact.column.special.GenderColumnFactory;
 import com.rendyrobbani.espresso.schema.fact.column.special.NIPColumnFactory;
 import com.rendyrobbani.espresso.schema.fact.column.special.PangkatASNColumnFactory;
+import com.rendyrobbani.latte.core.schema.factory.LatteCheckFactory;
 import com.rendyrobbani.latte.core.schema.impl.AuditableBaseLibrary;
 import com.rendyrobbani.latte.core.schema.impl.LockableBaseLibrary;
 import lombok.AccessLevel;
@@ -52,6 +53,16 @@ public final class DataUserTable {
 			foreignKeys.addAll(LockableBaseLibrary.getInstance().getForeignKeys(foreignKeys.size(), getTable()));
 		}
 		return foreignKeys;
+	}
+
+	private static List<Constraint> checks;
+
+	public static List<Constraint> getChecks() {
+		if (checks == null) {
+			checks = new ArrayList<>();
+			checks.add(LatteCheckFactory.createColumnMatchNIP(1, getTable(), getTable().getColumnId()));
+		}
+		return checks;
 	}
 
 }
