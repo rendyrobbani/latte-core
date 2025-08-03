@@ -20,7 +20,7 @@ public abstract class AbstractDataMasterSubfungsiEntity extends AbstractDataRead
 	@Column(name = "id", nullable = false, length = 5)
 	protected String id;
 
-	@Column(name = "id", nullable = false, length = 2)
+	@Column(name = "fungsi_id", nullable = false, length = 2)
 	protected String fungsiId;
 
 	@Column(name = "name", nullable = false, length = 255)

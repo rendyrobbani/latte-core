@@ -25,7 +25,6 @@ public class DataMasterFungsiTable {
 		if (table == null) {
 			var columns = new ArrayList<Column>();
 			columns.add(CharColumnFactory.create("id", 2, false, true));
-			columns.add(CharColumnFactory.create("code", 2, false));
 			columns.add(VarCharColumnFactory.create("name", false));
 			columns.add(BooleanColumnFactory.create("is_enabled", false));
 			columns.addAll(AuditableBaseLibrary.getInstance().getColumns());
@@ -39,8 +38,7 @@ public class DataMasterFungsiTable {
 	public static List<Constraint> getChecks() {
 		if (checks == null) {
 			checks = new ArrayList<>();
-			checks.add(LatteCheckFactory.createColumnEqualColumn(1, getTable(), getTable().findColumn("id"), getTable().findColumn("code")));
-			checks.add(LatteCheckFactory.createColumnMatchPattern(2, getTable(), getTable().getColumnId(), FungsiClassification.FUNGSI_REGEX_GROUP));
+			checks.add(LatteCheckFactory.createColumnMatchPattern(1, getTable(), getTable().getColumnId(), FungsiClassification.FUNGSI_REGEX_GROUP));
 		}
 		return checks;
 	}
