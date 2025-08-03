@@ -13,6 +13,13 @@
 		<maven.compiler.release>21</maven.compiler.release>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -24,6 +31,12 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.38</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.rendyrobbani</groupId>
+			<artifactId>espresso</artifactId>
+			<version>56c3ac7</version>
 		</dependency>
 	</dependencies>
 
