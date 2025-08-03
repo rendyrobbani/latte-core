@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class UserTable {
+public final class DataUserTable {
 
 	private static Table table;
 

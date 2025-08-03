@@ -2,7 +2,7 @@ package com.rendyrobbani.latte.core.schema.data.table.user.log;
 
 import com.rendyrobbani.espresso.schema.base.Constraint;
 import com.rendyrobbani.espresso.schema.base.Table;
-import com.rendyrobbani.latte.core.schema.data.table.user.UserTable;
+import com.rendyrobbani.latte.core.schema.data.table.user.DataUserTable;
 import com.rendyrobbani.latte.core.schema.factory.LatteForeignKeyFactory;
 import com.rendyrobbani.latte.core.schema.factory.LatteTableFactory;
 import com.rendyrobbani.latte.core.schema.impl.AuditableBaseLibrary;
@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class UserLogTable {
+public final class DataUserLogTable {
 
 	private static Table table;
 
 	public static Table getTable() {
-		if (table == null) table = LatteTableFactory.createLog(UserTable.getTable());
+		if (table == null) table = LatteTableFactory.createLog(DataUserTable.getTable());
 		return table;
 	}
 
@@ -32,7 +32,7 @@ public final class UserLogTable {
 			foreignKeys.addAll(AuditableBaseLibrary.getInstance().getForeignKeys(foreignKeys.size(), getTable()));
 			foreignKeys.addAll(LockableBaseLibrary.getInstance().getForeignKeys(foreignKeys.size(), getTable()));
 			foreignKeys.addAll(LoggableBaseLibrary.getInstance().getForeignKeys(foreignKeys.size(), getTable()));
-			foreignKeys.add(LatteForeignKeyFactory.createLog(foreignKeys.size(), getTable(), UserTable.getTable()));
+			foreignKeys.add(LatteForeignKeyFactory.createLog(foreignKeys.size(), getTable(), DataUserTable.getTable()));
 		}
 		return foreignKeys;
 	}

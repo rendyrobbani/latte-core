@@ -3,7 +3,7 @@ package com.rendyrobbani.latte.core.schema.base;
 import com.rendyrobbani.espresso.schema.base.Column;
 import com.rendyrobbani.espresso.schema.base.Constraint;
 import com.rendyrobbani.espresso.schema.base.Table;
-import com.rendyrobbani.latte.core.schema.data.table.user.UserTable;
+import com.rendyrobbani.latte.core.schema.data.table.user.DataUserTable;
 import com.rendyrobbani.latte.core.schema.factory.LatteForeignKeyFactory;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public interface BaseLibrary {
 		for (var column : getColumns()) {
 			if (column.getName().endsWith("_by")) {
 				index++;
-				foreignKeys.add(LatteForeignKeyFactory.create(index, table, List.of(column), UserTable.getTable(), List.of(UserTable.getTable().getColumnId())));
+				foreignKeys.add(LatteForeignKeyFactory.create(index, table, List.of(column), DataUserTable.getTable(), List.of(DataUserTable.getTable().getColumnId())));
 			}
 		}
 		return foreignKeys;

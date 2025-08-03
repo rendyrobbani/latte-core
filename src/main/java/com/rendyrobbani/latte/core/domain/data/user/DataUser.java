@@ -1,10 +1,8 @@
 package com.rendyrobbani.latte.core.domain.data.user;
 
-import com.rendyrobbani.espresso.common.data.person.PegawaiASN;
-import com.rendyrobbani.latte.core.domain.base.Auditable;
-import com.rendyrobbani.latte.core.domain.base.Lockable;
+import com.rendyrobbani.espresso.common.data.pegawai.PegawaiASN;
 
-public interface DataUser extends PegawaiASN, Lockable<DataUser>, Auditable<DataUser> {
+public interface DataUser extends PegawaiASN {
 
 	String getId();
 

@@ -1,10 +1,8 @@
 package com.rendyrobbani.latte.core.domain.data.user;
 
-import com.rendyrobbani.espresso.common.data.person.PegawaiASN;
-import com.rendyrobbani.latte.core.domain.base.Lockable;
-import com.rendyrobbani.latte.core.domain.data.DataLog;
+import com.rendyrobbani.espresso.common.data.pegawai.PegawaiASN;
 
-public interface DataUserLog extends DataLog<DataUser>, PegawaiASN, Lockable<DataUser> {
+public interface DataUserLog extends PegawaiASN {
 
 	String getPassword();
 
