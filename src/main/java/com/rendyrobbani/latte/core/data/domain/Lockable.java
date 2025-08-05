@@ -2,16 +2,16 @@ package com.rendyrobbani.latte.core.data.domain;
 
 import java.time.LocalDateTime;
 
-public interface Lockable<User, Target> {
+public interface Lockable {
 
 	boolean isLocked();
 
 	LocalDateTime getLockedAt();
 
-	User getLockedBy();
+	String getLockedBy();
 
-	Target lock(User lockedBy);
+	void lock(String lockedBy);
 
-	Target unlock(User unlockedBy);
+	void unlock(String unlockedBy);
 
 }

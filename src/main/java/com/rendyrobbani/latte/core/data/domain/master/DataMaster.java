@@ -3,7 +3,7 @@ package com.rendyrobbani.latte.core.data.domain.master;
 import com.rendyrobbani.latte.core.data.domain.Lockable;
 import com.rendyrobbani.latte.core.data.domain.user.DataUser;
 
-public interface DataMaster<Target, ID> extends Lockable<DataUser, Target> {
+public interface DataMaster<ID> extends Lockable {
 
 	ID getId();
 

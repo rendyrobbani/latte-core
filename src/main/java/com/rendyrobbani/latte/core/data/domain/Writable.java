@@ -1,11 +1,11 @@
 package com.rendyrobbani.latte.core.data.domain;
 
-public interface Writable<User, Target> extends Readable<User> {
+public interface Writable extends Readable {
 
-	Target update(User updatedAt);
+	void update(String updatedBy);
 
-	Target delete(User deletedAt);
+	void delete(String deletedBy);
 
-	Target restore(User restoredAt);
+	void restore(String restoredBy);
 
 }

@@ -2,20 +2,20 @@ package com.rendyrobbani.latte.core.data.domain;
 
 import java.time.LocalDateTime;
 
-public interface Readable<User> {
+public interface Readable {
 
 	LocalDateTime getCreatedAt();
 
-	User getCreatedBy();
+	String getCreatedBy();
 
 	LocalDateTime getUpdatedAt();
 
-	User getUpdatedBy();
+	String getUpdatedBy();
 
 	boolean isDeleted();
 
 	LocalDateTime getDeletedAt();
 
-	User getDeletedBy();
+	String getDeletedBy();
 
 }
