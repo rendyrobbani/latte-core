@@ -1,5 +1,7 @@
 package com.rendyrobbani.latte.core.data.domain;
 
+import com.rendyrobbani.espresso.identify.NIP;
+
 import java.time.LocalDateTime;
 
 public interface Lockable {
@@ -8,10 +10,10 @@ public interface Lockable {
 
 	LocalDateTime getLockedAt();
 
-	String getLockedBy();
+	NIP getLockedBy();
 
-	void lock(String lockedBy);
+	void lock(NIP lockedBy);
 
-	void unlock(String unlockedBy);
+	void unlock(NIP unlockedBy);
 
 }

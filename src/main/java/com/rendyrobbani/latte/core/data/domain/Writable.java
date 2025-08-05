@@ -1,11 +1,13 @@
 package com.rendyrobbani.latte.core.data.domain;
 
+import com.rendyrobbani.espresso.identify.NIP;
+
 public interface Writable extends Readable {
 
-	void update(String updatedBy);
+	void update(NIP updatedBy);
 
-	void delete(String deletedBy);
+	void delete(NIP deletedBy);
 
-	void restore(String restoredBy);
+	void restore(NIP restoredBy);
 
 }
