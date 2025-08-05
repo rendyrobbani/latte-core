@@ -36,7 +36,7 @@
 		<dependency>
 			<groupId>com.github.rendyrobbani</groupId>
 			<artifactId>espresso</artifactId>
-			<version>8c6675d</version>
+			<version>e8e2c43</version>
 		</dependency>
 	</dependencies>
 
